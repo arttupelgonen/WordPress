@@ -1,0 +1,21 @@
+<?php
+get_header();
+get_sidebar();
+
+?>
+	<h1>Otsikko</h1>
+	<?php 
+	if (have_posts()){
+		while(have_posts()){
+			the_post();
+			the_content();
+		}
+
+
+	}
+	?>
+<?php
+get_footer();
+?>
+
+	
