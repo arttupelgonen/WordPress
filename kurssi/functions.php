@@ -1,9 +1,10 @@
 <?php
 
 
-function custom_theme_setup() {
+function custom_setup_theme() {
 	add_theme_support('title-tag');
-	add_tehe_support('custom-background');
+	add_theme_support('custom-background');
+	add_theme_support('custom-header', array('width' => 1000, 'height' => 400));
 }
 add_action( 'after_setup_theme', 'custom_setup_theme' );
 
