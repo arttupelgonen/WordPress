@@ -1,3 +1,2 @@
 <?php
-wp_nav_menu(array('container' => 'nav'));
-?>
+wp_nav_menu(array('container' => 'nav', 'container_class' => 'left-nav')); ?>

@@ -1,19 +1,33 @@
-<?php
-get_header();
-get_sidebar();
+<?php get_header(); ?>
+<div class="content-row">
+<? get_sidebar(); ?>
+<main>
+	<?php if (have_posts()): ?>
+	<?php while(have_posts()): ?>
+			<?php the_post(); ?>
+			<h2><?php the_title(); ?></h2>
+			<?php the_content(); ?>
+		<?php endwhile; ?>
+	<?php endif; ?>	
 
-?>
-	<h1>Otsikko</h1>
-	<?php 
-	if (have_posts()){
-		while(have_posts()){
-			the_post();
-			the_content();
-		}
-
-
-	}
+	<h3 class="sininen">Uutuudet</h3>
+	<?php
+		$uudet_artikkelit = wp_get_recent_posts(array('numberposts' => '5'));
+		//print_r($uudet_artikkelit);
+		foreach ($uudet_artikkelit as $artikkeli ) :
+			
 	?>
+	<article>
+		<a href="<?php echo get_permalink( $artikkeli['ID']); ?>">
+		<img src="http://placekitten.com/150/200" alt="">
+		<h4><?php echo $artikkeli['post_title']; ?></h4>
+		<p><?php echo substr($artikkeli['post_excerpt'], 0, 100); ?>...</p>
+		</a>
+	</article>
+<?php endforeach; ?>
+</main>
+</div>	
+
 <?php
 get_footer();
 ?>

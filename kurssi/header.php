@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>> 
 <div class="main-container">	
 <header class="tummansininen main-header">
-	<div class="punainen tunnus"> <a href=" <?php echo get_home_url(); ?>">Dr.Schutz Finland</a></div>
+	<div class="punainen tunnus"><a href="<?php echo get_home_url(); ?>">Oma Yritys</a></div>
 	<div class="search-block">
 		<?php get_search_form(); ?>
 	</div>
